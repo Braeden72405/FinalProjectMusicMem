@@ -6,18 +6,25 @@ import java.util.List;
 
 public class MusicTheory {
     private static final String[] Notes =
-            {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
+            {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"}; //array of every note
+
+
 
     public static Scale createMajorScale(String rootNote) {
-        int[] pattern = {2, 2, 1, 2, 2, 2, 1};
-        return new Scale(createScale(rootNote, pattern), rootNote + " Major Scale");
+        int[] pattern = {2, 2, 1, 2, 2, 2, 1}; //pattern for major scale
+        return new Scale(createScale(rootNote, pattern), rootNote + " Major");
     }
 
     public static Scale createMinorScale(String rootNote) {
-        int[] pattern = {2, 1, 2, 2, 1, 2, 2};
-        return new Scale(createScale(rootNote, pattern), rootNote + " Minor Scale");
+        int[] pattern = {2, 1, 2, 2, 1, 2, 2}; //pattern for minor scale
+        return new Scale(createScale(rootNote, pattern), rootNote + " Minor");
     }
 
+
+    /**
+     * function for applying pattern to array of notes
+     *
+     */
     private static ArrayList<Note> createScale(String rootNote, int[] pattern) {
         ArrayList<Note> scale = new ArrayList<>();
 
